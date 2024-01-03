@@ -177,3 +177,39 @@ export const gymClassNames = [
     "Kettlebell Klash",
     "BoxFit Revolution",
 ];
+
+export const plans = [
+    {
+        benefits: [
+            "Basic equipment access",
+            "Group fitness classes",
+            "Standard gym hours",
+            "Fitness assessment included",
+            "Standard locker room facilities",
+        ],
+        price: 39,
+        img: "https://i.imgur.com/WU5cCsJ.jpg",
+    },
+    {
+        benefits: [
+            "Full equipment access",
+            "Premium fitness classes",
+            "Extended gym hours",
+            "Personalized fitness plan",
+            "Nutritional guidance included",
+        ],
+        price: 69,
+        img: "https://i.imgur.com/OC0yaOT.jpg",
+    },
+    {
+        benefits: [
+            "VIP equipment access",
+            "Unlimited premium classes",
+            "24/7 gym access",
+            "Dedicated personal trainer",
+            "Spa and recovery services included",
+        ],
+        price: 99,
+        img: "https://i.imgur.com/uFNxzqE.jpg",
+    },
+];

@@ -3,7 +3,6 @@ import asyncHandler from "express-async-handler";
 import { AuthenticationTypeRequest } from "../shared";
 import jwt from "jsonwebtoken";
 import { ACCESS_TOKEN_KEY } from "../../config";
-import { authenticationRoute } from "../routes/authenticationRoute";
 
 export const validateToken = asyncHandler(
     async (req: AuthenticationTypeRequest, res: Response, next: NextFunction) => {

@@ -14,13 +14,16 @@ import {
 export const getClasses = asyncHandler(async (req: Request, res: Response) => {
     const page = Number(req.query.page) || 1;
     const limit = Number(req.query.pageSize) || DEFAULT_PAGE_SIE;
-    const searchTerm = req.query.searchTerm.toString() || "";
-    console.log(searchTerm);
+    const searchTerm = req.query.searchTerm;
 
     // find all available classes
-
     await Class.paginate(
-        { $text: { $search: searchTerm } },
+        {
+            $and: [
+                { $text: { $search: searchTerm } },
+                { level: { $regex: "Advanced", $options: "i" } },
+            ],
+        },
         { page, limit },
         (err, result) => {
             if (err) {
