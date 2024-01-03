@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-
+import { AuthenticationFormData } from "../types";
 const UserModel = new mongoose.Schema({
     email: {
         type: String,
@@ -12,4 +12,4 @@ const UserModel = new mongoose.Schema({
     },
 });
 
-export const User = mongoose.model("User", UserModel);
+export const User = mongoose.model<AuthenticationFormData>("User", UserModel);

@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import { CONNECTION_STRING } from "../../config";
+
 export const connectDb = async () => {
     console.log(CONNECTION_STRING);
     try {

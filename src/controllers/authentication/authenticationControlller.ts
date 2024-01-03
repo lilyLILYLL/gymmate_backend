@@ -32,7 +32,7 @@ export const register = asyncHandler(
             throw new Error("User Data is not valid");
         }
 
-        res.status(201).json({ id: newUser.id, email: newUser.email });
+        res.status(201).json({ id: newUser.id, email });
     }
 );
 
@@ -45,6 +45,7 @@ export const login = asyncHandler(
 
         // TODO: check if email exists in the database
         const user = await User.findOne({ email });
+        console.log(user);
 
         // TODO: if yes, compare provided password to hashedPassword
         if (user && (await bcrypt.compare(password, user.password))) {
