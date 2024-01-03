@@ -21,6 +21,5 @@ ClassModel.index({
     startDate: "text",
     endDate: "text",
 });
-console.log(ClassModel.indexes());
 
 export const Class = mongoose.model("Class", ClassModel);

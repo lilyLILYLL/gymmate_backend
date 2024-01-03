@@ -27,7 +27,6 @@ export const getClasses = asyncHandler(async (req: Request, res: Response) => {
         { page, limit },
         (err, result) => {
             if (err) {
-                console.log(err);
                 res.status(500);
                 throw new Error("Internal server error");
             }
@@ -79,8 +78,6 @@ export const createClass = asyncHandler(async (req: ClassRequestType, res: Respo
             throw new Error("Fail in creating new class!");
         }
     });
-
-    console.log(classess.length);
 
     // // TODO: create a new class to the database
     // const newcreatedClass = await Class.create({
