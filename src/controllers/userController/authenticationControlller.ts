@@ -45,7 +45,6 @@ export const login = asyncHandler(
 
         // TODO: check if email exists in the database
         const user = await User.findOne({ email });
-        console.log(user);
 
         // TODO: if yes, compare provided password to hashedPassword
         if (user && (await bcrypt.compare(password, user.password))) {
