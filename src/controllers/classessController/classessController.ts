@@ -14,19 +14,21 @@ import {
 export const getClasses = asyncHandler(async (req: Request, res: Response) => {
     const page = Number(req.query.page) || 1;
     const limit = Number(req.query.pageSize) || DEFAULT_PAGE_SIE;
-    const searchTerm = req.query.searchTerm;
+    const searchTerm = req.query.searchTerm || "";
+    const level = req.query.level || "";
+
+    const conditions = [
+        searchTerm && { $text: { $search: searchTerm } },
+        level && { level: { $regex: level, $options: "i" } },
+    ].filter(Boolean);
 
     // find all available classes
     await Class.paginate(
-        {
-            $and: [
-                { $text: { $search: searchTerm } },
-                { level: { $regex: "Advanced", $options: "i" } },
-            ],
-        },
+        conditions.length > 0 ? { $and: conditions } : {},
         { page, limit },
         (err, result) => {
             if (err) {
+                console.log(err);
                 res.status(500);
                 throw new Error("Internal server error");
             }
