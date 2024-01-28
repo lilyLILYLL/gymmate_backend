@@ -15,7 +15,7 @@ export const validateToken = asyncHandler(
             // TODO: decode the token
             jwt.verify(token, ACCESS_TOKEN_KEY, (err, decoded: jwt.JwtPayload) => {
                 if (err) {
-                    console.log(err);
+                    
                     res.status(401);
                     throw new Error("User is not authorised");
                 }

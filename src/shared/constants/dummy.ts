@@ -189,6 +189,7 @@ export const plans = [
         ],
         price: 39,
         img: "https://i.imgur.com/WU5cCsJ.jpg",
+        type: "Basic",
     },
     {
         benefits: [
@@ -200,6 +201,7 @@ export const plans = [
         ],
         price: 69,
         img: "https://i.imgur.com/OC0yaOT.jpg",
+        type: "Premium",
     },
     {
         benefits: [
@@ -211,5 +213,6 @@ export const plans = [
         ],
         price: 99,
         img: "https://i.imgur.com/uFNxzqE.jpg",
+        type: "VIP",
     },
 ];

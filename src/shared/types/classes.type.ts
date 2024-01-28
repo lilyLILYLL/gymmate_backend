@@ -13,3 +13,5 @@ export type ClassType = {
 export type ClassRequestType = Omit<Request, "body"> & {
     body: ClassType;
 };
+
+
