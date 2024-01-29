@@ -1,5 +1,5 @@
 import express, { Request, Response } from "express";
-import { galleryImages } from "../shared";
+import { imgs } from "../shared";
 export const galleryRoute = express.Router();
 
 //@desc  get images in galler pages
@@ -12,5 +12,5 @@ galleryRoute.route("/galleryImages").get(async (req: Request, res: Response) => 
     const startIndex = (pageNumber - 1) * pageSize;
     const endIndex = pageNumber * pageSize;
 
-    res.status(200).json(galleryImages.slice(startIndex, endIndex));
+    res.status(200).json(imgs.slice(startIndex, endIndex));
 });
